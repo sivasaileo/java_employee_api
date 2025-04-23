@@ -74,7 +74,7 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
-            	.requestMatchers(HttpMethod.GET, "/employees").hasAnyRole("ADMIN", "USER") 
+            	.requestMatchers(HttpMethod.GET, "/employees").hasAnyRole("ADMIN", "USER") // Both ADMIN and USER can access the employees get endpoint
                 .requestMatchers("/employees/**").hasRole("ADMIN") // Only ADMIN can access employee endpoints
                 .requestMatchers("/h2-console/**").permitAll() // Allow access to H2 console
                 .requestMatchers("/data/**").hasRole("USER") // Only USER can access data endpoints
