@@ -14,7 +14,6 @@ public class EmployeeEntity {
     private String name;
     private String role;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
